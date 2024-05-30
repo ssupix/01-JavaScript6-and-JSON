@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to Local Storage</title>
+</head>
+<body>
+<script>
+    // JavaScript Object: We will use a const rather than var.
+    // Const maintain constant values, only be accessed within a block it was declared and it cannot be updated or re-declared
+
+    const person = {
+        name : "Jenna",
+        location  : "Paper Company",
+    }
+
+    // Local Storage can only store strings (we will convert with stringify), is read oly (why used const), and is saved across browser session with no expiration date.
+    // Alternative not covered: sessionStorage which an experiation on page close
+    // window.localStorage.setItem('nameOf', JSON stringify(objName));
+    window.localStorage.setItem('user', JSON.stringify(person));
+    // Note that this data is now stored locally
+
+    // To view it window.localStorage.getItem('item')
+    console.log(window.localStorage.getItem('user'));
+    // To use it within JS we convert it back
+    JSON.parse(window.localStorage.getItem('user'));
+
+    document.writeln("<h1>" + person.name  + "</h1>");
+    document.writeln("<h3>" + person.location  + "</h3>");
+
+    // var KeyName = window.localStorage.key(index);
+    // document.writeln(KeyName)
+
+</script>
+</body>
+</html>
