@@ -69,6 +69,29 @@
     document.writeln("<p>" + user_profile.bio[1].info + "</p>");
     document.writeln("<p>" + "First appeared on screen: " + user_profile.bio[3].info + "</p>");
 
+    // Convert: JSON --> JS Object --> JSON
+    // Being able to convert JSON from object to string and vice versa is useful for transferring and storing data.
+
+    // The JSON.stringify() function converts an object to a JSON string.
+    // Strings are useful for transporting data from a client to server trough storing or passing information in lightweight way.
+    // obj is just a variable holding our object.
+
+    // Data formatted as a JS object:
+    var obj = {
+        first_name : "Jenna",
+        last_name  : "Fischer",
+        occupation    : "actress"
+    };
+
+    // JSON.stringify convert to a simple string (transport)
+    var client = JSON.stringify(obj)
+    console.log(client);
+
+    // JSON.parse to convert JSON back to an object
+    // var clientJ = JSON.parse(obj) // Why do we get an error?
+    var clientJ = JSON.parse(client) // Why does this work?
+    console.log(clientJ);
+
 </script>
     
 </body>

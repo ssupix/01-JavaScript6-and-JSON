@@ -16,7 +16,7 @@
     // Strings are useful for transporting data from a client to server trough storing or passing information in lightweight way.
     // obj is just a variable holding our object.
 
-    // Data formated as a JS object:
+    // Data formatted as a JS object:
     var obj = {
         first_name : "Jenna",
         last_name  : "Fischer",
@@ -26,6 +26,11 @@
     // JSON.stringify convert to a simple string (transport)
     var client = JSON.stringify(obj)
     console.log(client);
+
+    // JSON.parse to convert JSON back to an object
+    // var clientJ = JSON.parse(obj) // Why do we get an error?
+    var clientJ = JSON.parse(client) // Why does this work?
+    console.log(clientJ);
 
 </script>
     
