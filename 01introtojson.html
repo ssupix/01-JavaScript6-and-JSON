@@ -6,6 +6,7 @@
     <title>Introduction to working with JSON</title>
 </head>
 <body>
+
     <h1>JSON: JavaScript Object Notation</h1>
     <h2>Purpose</h2>
     <ul>
@@ -14,6 +15,56 @@
         <li>Transferring data from server to client, client to server, and server to server</li>
         <li>Configuring and verifying data</li>
     </ul>
+
+<script>
+
+    // Storing Data and Data Structure
+
+    // JavaScript Object
+    var user = {
+        first_name : "Jenna",
+        last_name  : "Fischer",
+        online     : true,
+        full_name  : function() {
+            return this.first_name + " " + this.last_name;
+        }
+    };
+
+    // Similar equivalent i  JSON, note the lack of quotes on they keys and lack of function ( data separated from use ). To access this data with a similar functionality we will be using . syntax.
+    var pam = {
+        "first_name"  : "Jenna",
+        "last_name"   : "Fischer",
+        "online"      : true
+    };
+
+    // alert(pam.first_name); // Access data using dot.syntax (DOM)
+    // console.log("Is " + pam.first_name + " online? " + pam["online"]); // square bracket syntax, note the quotes on the Key of key/value pair.
+
+    // Storing Data multidimensional array (js array) using JSON
+    var user_profile = {
+        "username"   : "Jenna",
+        "bio"        : [
+            {
+                "label"  : "Image",
+                "info"   : "img/jenna.png"
+            },
+            {
+                "label"  : "Born",
+                "info"    : "March 7, 1974 (Age 50)"
+            },
+            {
+                "label"  : "Occupation",
+                "info"   : "Actress"
+            }
+        ]
+    }
+
+    // BAsed on previous data set
+    document.writeln("<h4>" + user_profile.username + "</h4>");
+    document.writeln("<img src='" + user_profile.bio[0].info + "' >'");
+    document.writeln("<p>" + user_profile.bio[1].info + "</p>");
+
+</script>
     
 </body>
 </html>
